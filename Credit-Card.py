@@ -69,7 +69,7 @@ def evaluate_models(models, X_train, X_test, y_train, y_test, dataset_label=""):
     model_preds = {}
 
     for name, model in models.items():
-        print(f"🔄 Entraînement du modèle : {name}")
+        print(f" Entraînement du modèle : {name}")
         model.fit(X_train, y_train)
         y_pred = model.predict(X_test)
         model_preds[name] = y_pred
@@ -93,7 +93,7 @@ def evaluate_models(models, X_train, X_test, y_train, y_test, dataset_label=""):
         ])
 
     # Matrices de confusion
-    print(f"\n📊 Matrices de confusion - {dataset_label}")
+    print(f"\n Matrices de confusion - {dataset_label}")
     for name, y_pred in model_preds.items():
         cm = confusion_matrix(y_test, y_pred)
         plt.figure(figsize=(5, 4))
@@ -145,7 +145,7 @@ results_df1.to_csv('/Users/floriskezimana/Downloads/Projets INF5103/projet#05/re
 results_df2.to_csv('/Users/floriskezimana/Downloads/Projets INF5103/projet#05/resultats_modeles_transactions_balanced_rapide.csv', index=False)
 
 # Affichage
-print("✅ Résultats fichier 1 :")
+print(" Résultats fichier 1 :")
 print(results_df1)
-print("\n✅ Résultats fichier 2 :")
+print("\n Résultats fichier 2 :")
 print(results_df2)
